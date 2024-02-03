@@ -1,0 +1,63 @@
+<div class="quiz__container">
+  <div class="quiz_logo">
+    <img src="assets/imgs/logo.png" alt="">
+    <h3>{{ title }}</h3> <!-- Depois aplicar a msm logica no código debaixo -->
+  </div>
+
+  <div *ngIf=!finished class="quiz_questions">
+      <h3>{{ questionSelected.question }}</h3>
+
+  </div>
+
+  <div *ngIf=!finished class="quiz_options">
+    <button
+    *ngFor="let option of questionSelected.options; let i = index"
+    (click)="playerChoose(option.alias)"
+    class="btn-option">
+      {{ option.name }}
+    </button>
+  </div>
+
+  <div *ngIf=finished class="quiz_results">
+    <h1>O seu resultado é: </h1>
+    <p>{{ answerSelected }}</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!--  <div class="quiz__header">
+    <h1 class="quiz__title">Quiz</h1>
+    <p class="quiz__description">Test your knowledge of the world!</p>
+  </div>
+  <div class="quiz__body">
+    <div class="quiz__question">
+      <p class="quiz__question-text">What is the capital of France?</p>
+    </div>
+    <div class="quiz__answers">
+      <div class="quiz__answer">
+        <input type="radio" name="answer" id="answer-1" class="quiz__answer-input" />
+        <label for="answer-1" class="quiz__answer-label">Paris</label>
+      </div>
+      <div class="quiz__answer">
+        <input type="radio" name="answer" id="answer-2" class="quiz__answer-input" />
+        <label for="answer-2" class="quiz__answer-label">London</label>
+      </div>
+      <div class="quiz__answer">
+        <input type="radio" name="answer" id="answer-3" class="quiz__answer-input" />
+        <label for="answer-3" class="quiz__answer-label">Berlin</label>
+      </div>
+      <div class="quiz__answer">
+        <input type="radio" name="answer" id="answer-4" class="quiz__answer-input" />
+        <label for="answer-4" class="quiz__answer-label">Madrid</label>
+      </div>
+    </div>
+    <div class="quiz__controls">
+      <button class="quiz__button quiz__button--next">Next</button>
+      <button class="quiz__button quiz__button--finish">Finish</button>
+    </div>
+  </div>-->
